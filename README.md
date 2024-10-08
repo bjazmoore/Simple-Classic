@@ -25,12 +25,14 @@ While I do not have a preview site running, you can get a feel for the theme fro
 <img src="https://github.com/user-attachments/assets/253cfcd3-3e10-4977-a1d4-e4704b37ac93" width="600">
 
 Figure 1.  Simple Classic without post images enabled.
-<br/>
+
+---
 
 <img src="https://github.com/user-attachments/assets/878bfb7c-24b1-4a76-ae9d-0332846adff0" width="600">
 
 Figure 2. Simple Classic with post images enabled.
-<br/>
+
+---
 
 <img src="https://github.com/user-attachments/assets/1a403310-c587-4a3d-bf9e-85435fc4405b" width="600">
 

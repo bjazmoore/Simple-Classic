@@ -9,7 +9,7 @@ The current version is 1.1.0.0
 This theme now supports pages and has support to display child pages that are related to a specidic page.
 
 ## Installing the Theme
-Download the theme from the [releases section](#) or from this direct link: [Simple Classic v.1.1.0.0](https://github.com/bjazmoore/Simple-Classic/releases/download/1.1.0.0/simple.classic.1.1.0.0.zip)
+Download the theme from the [releases section](https://github.com/bjazmoore/Simple-Classic/releases) or from this direct link: [Simple Classic v.1.1.0.0](https://github.com/bjazmoore/Simple-Classic/releases/download/1.1.0.0/simple.classic.1.1.0.0.zip)
 
 1) In Publii click on the three vertical dots in the upper right corner of the application.
 2) Click on the menu item **Themes**.

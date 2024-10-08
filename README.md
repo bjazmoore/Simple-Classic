@@ -25,41 +25,49 @@ While I do not have a preview site running, you can get a feel for the theme fro
 <img src="https://github.com/user-attachments/assets/253cfcd3-3e10-4977-a1d4-e4704b37ac93" width="600">
 
 Figure 1.  Simple Classic without post images enabled.
+
 ---
 
 <img src="https://github.com/user-attachments/assets/878bfb7c-24b1-4a76-ae9d-0332846adff0" width="600">
 
 Figure 2. Simple Classic with post images enabled.
+
 ---
 
 <img src="https://github.com/user-attachments/assets/1a403310-c587-4a3d-bf9e-85435fc4405b" width="600">
 
 Figure 3. The Tags page as part of the Simple Classic theme
+
 ---
 
 <img src="https://github.com/user-attachments/assets/f2625b38-1e2a-47cd-a69c-90dc86f0b96f" width="600">
 
 Figure 4.  A Tag page (for a single tag) as part of the Simple Classic theme.
+
 ---
 
 <img src="https://github.com/user-attachments/assets/66155a98-e0cd-4ed2-ac3b-846d300dcc6f" width="600">
 
 Figure 5.  The Author page as part of the Simple Classic theme.
+
 ---
 
 <img src="https://github.com/user-attachments/assets/1b2bed18-5c7e-4e06-acc6-d1682fadf64b" width="600">
 
 Figure 6.  A Page page as seen in the Simple Classic theme.
+
 ---
 
 <img src="https://github.com/user-attachments/assets/8a16da8e-dc01-47b5-a421-e562e2483d18" width="600">
 
 Figure 7.  The bottom of the same page (as Figure 6) showing child page support for the Simple Classic theme.
+
 ---
 
 <img src="https://github.com/user-attachments/assets/ce7ffa8e-c714-4fdc-a0ed-b0a4aaf3d9bb" width="600">
 
 Figre 8.  Enable Display Child pages in the theme.
+
 ---
 
 <img src="https://github.com/user-attachments/assets/58b18c22-9c14-45e9-a0ab-7b8517db94a8" width="600">

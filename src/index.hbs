@@ -1,0 +1,136 @@
+{{> head}}
+{{> top}}
+{{#checkIf @config.custom.frontSource '==' "post" }}
+   {{> frontpage-post}}
+{{else}}
+   <main>
+      <div class="hero">
+         {{#if @config.custom.uploadHero}}
+            <figure class="hero__image hero__image--overlay">
+               <img
+                  src="{{@config.custom.uploadHero}}"
+                  {{#if @config.site.responsiveImages}}
+                     {{responsiveImageAttributes @config.custom.uploadHero}}
+                  {{/if}}
+                  {{ lazyload "eager" }}
+                  {{imageDimensions @config.custom.uploadHero}}
+                  alt="{{@config.custom.uploadHeroAlt}}">
+
+               {{#if @config.custom.uploadHeroCaption}}
+                  <figcaption>
+                     {{@config.custom.uploadHeroCaption}}
+                  </figcaption>
+               {{/if}}
+            </figure>
+         {{/if}}
+         {{#if @config.custom.textHero}}
+            <header class="hero__content">
+               <div class="wrapper">
+                  {{{@config.custom.textHero}}}
+                  {{#if @config.custom.siteOwner}}
+                     {{#siteOwner}}
+                        <div class="post__meta post__meta--author">
+                           {{#if avatar}}
+                              <img
+                                 src="{{avatarImage.url}}"
+                                 {{ lazyload "eager" }}
+                                 height="{{avatarImage.height}}"
+                                 width="{{avatarImage.width}}"
+                                 class="post__author-thumb"
+                                 alt="{{avatarImage.alt}}">
+                           {{/if}}
+                           <a href="{{url}}" class="front__author">{{name}}</a>
+                        </div>
+                     {{/siteOwner}}
+                  {{/if}}
+               </div>
+            </header>
+         {{/if}}
+      </div>
+      <!--  front begins here -->
+      <div class="wrapper front">
+         {{#each posts}}
+            <article class="front__item">
+               {{#if @config.custom.frontFeaturedImage}}
+                  {{#featuredImage}}
+                     {{#if url}}
+                        <figure class="front__image">
+                           <img
+                              src="{{url}}"
+                              {{#if @config.site.responsiveImages}}
+                                 {{responsiveImageAttributes 'featuredImage' srcset.feed sizes.feed}}
+                              {{/if}}
+                              {{ lazyload "lazy" }}
+                              height="{{height}}"
+                              width="{{width}}"
+                              alt="{{alt}}">
+                        </figure>
+                     {{/if}}
+                  {{/featuredImage}}
+               {{/if}}
+               <div class="front__content">
+                  <header>
+                     {{#checkIfAny @config.custom.frontAvatar @config.custom.frontAuthor @config.custom.frontDate}}
+                        <div class="front__meta">
+                           {{#author}}
+                              {{#if @config.custom.frontAvatar}}
+                                 {{#if avatar}}
+                                    <img
+                                       src="{{avatarImage.url}}"
+                                       {{ lazyload "lazy" }}
+                                       height="{{avatarImage.height}}"
+                                       width="{{avatarImage.width}}"
+                                       class="front__author-thumb"
+                                       alt="{{avatarImage.alt}}">
+                                 {{/if}}
+                              {{/if}}
+                              {{#if @config.custom.frontAuthor}}
+                                 <a href="{{url}}" class="front__author">{{name}}</a>
+                              {{/if}}
+                           {{/author}}
+                           {{#if @config.custom.frontDate}}
+                              {{#checkIf @config.custom.feedDateType '==' "published" }}
+                                 <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}" class="front__date">
+                                    {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                                       {{date createdAt @config.custom.formatDate}}
+                                    {{else}}
+                                       {{date createdAt @config.custom.formatDateCustom}}
+                                    {{/checkIf}}
+                                 </time>
+                              {{/checkIf}}
+                              {{#checkIf @config.custom.feedDateType '==' "modified" }}
+                                 <time datetime="{{date modifiedAt 'YYYY-MM-DDTHH:mm'}}" class="front__date">
+                                    {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                                       {{date modifiedAt @config.custom.formatDate}}
+                                    {{else}}
+                                       {{date modifiedAt @config.custom.formatDateCustom}}
+                                    {{/checkIf}}
+                                 </time>
+                              {{/checkIf}}
+                           {{/if}}
+                        </div>
+                     {{/checkIfAny}}
+                     <h2 class="h4 front__title">
+                        <a href="{{url}}">
+                           {{title}}
+                        </a>
+                     </h2>
+                  </header>
+                  {{#if hasCustomExcerpt}}
+                     {{{ excerpt }}}
+                  {{else}}
+                     <p>{{{ excerpt }}}</p>
+                  {{/if}}
+                  {{#if @config.custom.frontReadMore}}
+                     <a href="{{url}}" class="readmore front__readmore">
+                        {{ translate 'post.readMore' }}</a>
+                  {{/if}}
+               </div>
+            </article>
+         {{/each}}
+         {{> pagination}}
+      </div>
+      <!--  Feed ends here -->
+   </main>
+{{/checkIf}}
+{{> footer}}

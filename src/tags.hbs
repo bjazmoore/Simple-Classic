@@ -1,0 +1,59 @@
+{{> head}}
+{{> top}}
+<main class="page page--tags">
+   <div class="hero">
+      {{#checkIfAll @config.custom.uploadHero @config.custom.displayHeroImage}}
+         <figure class="hero__image hero__image--overlay">
+            <img
+               src="{{@config.custom.uploadHero}}"
+               {{#if @config.site.responsiveImages}}
+               {{responsiveImageAttributes @config.custom.uploadHero}}
+               {{/if}}
+               {{ lazyload "eager" }}
+               {{imageDimensions @config.custom.uploadHero}}
+               alt="{{@config.custom.uploadHeroAlt}}">
+
+            {{#if @config.custom.uploadHeroCaption}}
+               <figcaption>
+                  {{@config.custom.uploadHeroCaption}}
+               </figcaption>
+            {{/if}}
+         </figure>
+      {{/checkIfAll}}
+      <header class="hero__content">
+         <div class="wrapper">
+            <h1>
+               {{ translate 'tags.tagsPageTitle' }}
+               {{#if @config.custom.tagsTagCount}}
+                  <sup>({{tagsNumber}})</sup>
+               {{/if}}
+            </h1>
+            <p>
+               {{ translate 'tags.description' }}
+            </p>
+         </div>
+      </header>
+   </div>
+   <div class="wrapper">
+      <ul class="feed feed--grid tag--grid">
+         {{#each tags}}
+            <li>
+               <h2 class="h4 ">
+                  <a href="{{url}}">
+                     {{name}}
+                  </a>
+                  {{#if @config.custom.tagsPostCount}}
+                     <sup>({{postsNumber}})</sup>
+                  {{/if}}
+               </h2>
+               {{#checkIfAll @config.custom.tagsDescription description}}
+                  <div class="feed--grid-tag-desc">
+                     {{{description}}}
+                  </div>
+               {{/checkIfAll}}
+            </li>
+         {{/each}}
+      </ul>
+   </div>
+</main>
+{{> footer}}

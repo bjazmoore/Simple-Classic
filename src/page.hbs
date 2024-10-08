@@ -1,0 +1,180 @@
+{{> head}}
+{{> top}}
+<main>
+   {{#page}}
+      <article class="post">
+         <div class="hero">
+
+            {{#featuredImage}}
+               {{#if url}}
+                  <figure class="hero__image hero__image--overlay">
+                     <img
+                        src="{{url}}"
+                        {{#if @config.site.responsiveImages}}
+                            {{responsiveImageAttributes 'featuredImage' srcset sizes}}
+                        {{/if}}
+                        {{ lazyload "eager" }}
+                        height="{{height}}"
+                        width="{{width}}"
+                        alt="{{alt}}">
+
+                     {{#checkIfAny caption credits}}
+                        <figcaption>
+                           {{caption}}
+                           {{credits}}
+                        </figcaption>
+                     {{/checkIfAny}}
+                  </figure>
+               {{else}}
+                  {{#checkIfAll @config.custom.uploadHero @config.custom.displayHeroImage}}
+                     <figure class="hero__image hero__image--overlay">
+
+                        <img
+                           src="{{@config.custom.uploadHero}}"
+                           {{#if @config.site.responsiveImages}}
+                              {{responsiveImageAttributes @config.custom.uploadHero}}
+                           {{/if}}
+                           {{ lazyload "eager" }}
+                           alt="{{@config.custom.uploadHeroAlt}}">
+
+                        {{#if @config.custom.uploadHeroCaption}}
+                           <figcaption>
+                              {{@config.custom.uploadHeroCaption}}
+                           </figcaption>
+                        {{/if}}
+
+                     </figure>
+                  {{/checkIfAll}}
+               {{/if}}
+            {{/featuredImage}}
+
+            <header class="hero__content">
+               <div class="wrapper">
+                  {{#if @config.page.displayDate}}
+                     <div class="post__meta">
+                        <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">
+                           {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                              {{date createdAt @config.custom.formatDate}}
+                           {{else}}
+                              {{date createdAt @config.custom.formatDateCustom}}
+                           {{/checkIf}}
+                        </time>
+                     </div>
+                  {{/if}}
+                  <h1>
+                     {{title}}
+                  </h1>
+                  {{#if @config.page.displayAuthor}}
+                     <div class="post__meta post__meta--author">
+                        {{#author}}
+                           {{#if avatar}}
+                              <img
+                                 src="{{avatarImage.url}}"
+                                 {{ lazyload "eager" }}
+                                 height="{{avatarImage.height}}"
+                                 width="{{avatarImage.width}}"
+                                 class="post__author-thumb"
+                                 alt="{{avatarImage.alt}}">
+                           {{/if}}
+                           <a href="{{url}}" class="feed__author">{{name}}</a>
+                        {{/author}}
+                     </div>
+                  {{/if}}
+               </div>
+            </header>
+         </div>
+
+         <div class="wrapper post__entry">
+            {{{text}}}
+         </div>
+
+         {{#checkIfAny @config.page.displayChildPages @config.page.displayLastUpdatedDate @config.page.displayTags @config.page.displayShareButtons @config.page.displayAuthorBio}}
+            <footer class="wrapper post__footer">
+
+
+               {{#if @config.page.displayLastUpdatedDate}}
+                  {{#if modifiedAt}}
+                     <p class="post__last-updated">
+                        {{ translate 'page.lastUpdatedDate' }}
+                        {{#checkIf @config.custom.formatDate '!=' 'custom'}}
+                           {{date modifiedAt @config.custom.formatDate}}
+                        {{else}}
+                           {{date modifiedAt @config.custom.formatDateCustom}}
+                        {{/checkIf}}
+                     </p>
+                  {{/if}}
+               {{/if}}
+
+               {{#if @config.page.displayShareButtons}}
+                  {{#checkIfAll @plugins.socialSharing @plugins.socialSharing.state}}
+                     <div class="post__share">
+                        {{{@customSocialSharing}}}
+                     </div>
+                  {{else}}
+                     <div class="post__share">
+                        {{> share-buttons}}
+                     </div>
+                  {{/checkIfAll}}
+               {{/if}}
+
+               {{#if @config.page.displayAuthorBio}}
+                  <div class="post__bio bio">
+                     {{#author}}
+                        {{#if avatar}}
+                           <img
+                              src="{{avatarImage.url}}"
+                              {{ lazyload "lazy" }}
+                              height="{{avatarImage.height}}"
+                              width="{{avatarImage.width}}"
+                              class="bio__avatar"
+                              alt="{{avatarImage.alt}}">
+                        {{/if}}
+                        <div>
+                           <h3 class="bio__name">
+                              <a href="{{url}}" rel="author">{{name}}</a>
+                           </h3>
+                           {{#if description}}
+                              <div class="bio__desc">
+                                 {{{description}}}
+                              </div>
+                           {{/if}}
+                        </div>
+                     {{/author}}
+                  </div>
+               {{/if}}
+            </footer>
+         {{/checkIfAny}}
+      </article>
+
+      {{#if @config.page.displayChildPages}}
+         {{#if subpages}}
+            <div class="wrapper subpages">
+               <div class="entry-wrapper">
+                 <h2 class="h6 subpages__title">{{  @config.custom.childPagesTitle }}</h2>
+                  <ul class="subpages__list">
+                     {{> subpages-list}}
+                  </ul>
+               </div>
+            </div>
+         {{/if}}
+      {{/if}}
+
+      {{#if @config.page.displayComments}}
+         <div class="post__comments">
+            <div class="wrapper">
+               {{{@commentsCustomCode}}}
+            </div>
+         </div>
+      {{/if}}
+
+      {{#if @customHTML.afterPage}}
+         <div class="banner banner--after-post">
+            <div class="wrapper">
+               {{{@customHTML.afterPage}}}
+            </div>
+         </div>
+      {{/if}}
+
+   {{/page}}
+</main>
+{{> footer}}

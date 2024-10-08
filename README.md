@@ -13,8 +13,10 @@ Download the theme from the releases section or from this direct link: Simple Cl
 3) Click on the **Install Theme** button.
 4) Locate the theme file (it should be a zip file) that you downloaded.  (It is probably in your downloads folder).  Select it and click the Open button.
 5) Step 4 installed the theme globally.  Now click **Site settings** in the Publii menu.
-6) In the Theme dropdown field in the Basic settings section select the theme you installed - it should be listed under the **Install and Use** section.
+6) In the Theme dropdown field in the Basic settings section select the theme you installed - it should be listed under the **Install and Use** section as seen in the image below.
+
 ![shot_241007_201007](https://github.com/user-attachments/assets/b650d36d-b7e6-456f-b9e8-cdf427c980e1)
+
 7) Save settings and the theme will be installed locally in the current website.
 
 ## Screenshots

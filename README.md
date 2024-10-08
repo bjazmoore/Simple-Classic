@@ -8,7 +8,8 @@ This theme now supports pages and has support to display child pages that are re
 ## Screenshots
 While I do not have a preview site running, you can get a feel for the theme from the following screen shots.
 
-<img src="https://github.com/user-attachments/assets/253cfcd3-3e10-4977-a1d4-e4704b37ac93" width="300">
+<img src="https://github.com/user-attachments/assets/253cfcd3-3e10-4977-a1d4-e4704b37ac93" width="600">
+
 Figure 1.  Simple Classic without post images enabled.
 
 ![shot_241007_190326](https://github.com/user-attachments/assets/878bfb7c-24b1-4a76-ae9d-0332846adff0)

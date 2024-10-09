@@ -2,7 +2,7 @@
 Simple is a clean and minimal blogging theme with a large hero banner across the top of the page. Readable article previews provide titles and text snippets to draw readers in - with the option to include thumbnails of the featured image.  A full suite of typography options let you stylize text and insert photos for pixel-perfect reading experiences.  Pages support brings this classic theme up to date.  This theme for Publii version 0.46.x and higher.
 
 ## Features
-Manage your page look and feel with extensive customization features including colors, fonts, menu, social media sharing and layout options.
+This theme allows the user to modify your website look and feel with extensive customization features including colors, fonts, menus, social media sharing and layout options.
 
 ## History
 This theme is based on the original Simple theme that shipped with Publii before version 0.46.x.  It supports the new pages introduced with version 0.46.0.  Several updates have been made to the original Simple theme for Publii including thumbnail images on the posts page, pages support, and child pages support.  It has been renamed Simple Classic to avoid confusion with the newest Simple theme released with the version 0.46.0 of Publii.
